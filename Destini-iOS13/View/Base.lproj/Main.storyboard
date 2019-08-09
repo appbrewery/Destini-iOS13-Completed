@@ -49,6 +49,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="choiceMade:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2za-Py-X5j"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fwF-55-PpX">
                                         <rect key="frame" x="0.0" y="718" width="374" height="100"/>
@@ -65,6 +68,9 @@
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="choiceMade:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mq1-rX-5ka"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -91,7 +97,7 @@
     </scenes>
     <resources>
         <image name="background" width="958" height="1793"/>
-        <image name="choice1Background" width="1370" height="363"/>
-        <image name="choice2Background" width="1370" height="363"/>
+        <image name="choice1Background" width="1370.5" height="363"/>
+        <image name="choice2Background" width="1370.5" height="363"/>
     </resources>
 </document>

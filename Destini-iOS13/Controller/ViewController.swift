@@ -19,6 +19,40 @@ class ViewController: UIViewController {
 
     }
 
-
+    @IBAction func choiceMade(_ sender: UIButton) {
+        
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
