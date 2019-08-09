@@ -10,14 +10,39 @@
     
     struct StoryBrain {
         
-        //Tracking the current story number. This is used to pick out the right story from the stories Array.
         var storyNumber = 0
         
-        //All the story data moved over.
         let stories = [
-            Story(title: "You see a fork in the road.", choice1: "Take a left.", choice2: "Take a right."),
-            Story(title: "You see a tiger.", choice1: "Shout for help.", choice2: "Play dead."),
-            Story(title: "You find a treasure chest.", choice1: "Open it.", choice2: "Check for traps.")
+            Story(
+                title: "Your car has blown a tire on a winding road in the middle of nowhere with no cell phone reception. You decide to hitchhike. A rusty pickup truck rumbles to a stop next to you. A man with a wide brimmed hat with soulless eyes opens the passenger door for you and asks: 'Need a ride, boy?'.",
+                choice1: "I'll hop in. Thanks for the help!", choice1Destination: 2,
+                choice2: "Better ask him if he's a murderer first.", choice2Destination: 1
+            ),
+            Story(
+                title: "He nods slowly, unfazed by the question.",
+                choice1: "At least he's honest. I'll climb in.", choice1Destination: 2,
+                choice2: "Wait, I know how to change a tire.", choice2Destination: 3
+            ),
+            Story(
+                title: "As you begin to drive, the stranger starts talking about his relationship with his mother. He gets angrier and angrier by the minute. He asks you to open the glovebox. Inside you find a bloody knife, two severed fingers, and a cassette tape of Elton John. He reaches for the glove box.",
+                choice1: "I love Elton John! Hand him the cassette tape.", choice1Destination: 5,
+                choice2: "It's him or me! You take the knife and stab him.", choice2Destination: 4
+            ),
+            Story(
+                title: "What? Such a cop out! Did you know traffic accidents are the second leading cause of accidental death for most adult age groups?",
+                choice1: "The", choice1Destination: 0,
+                choice2: "End", choice2Destination: 0
+            ),
+            Story(
+                title: "As you smash through the guardrail and careen towards the jagged rocks below you reflect on the dubious wisdom of stabbing someone while they are driving a car you are in.",
+                choice1: "The", choice1Destination: 0,
+                choice2: "End", choice2Destination: 0
+            ),
+            Story(
+                title: "You bond with the murderer while crooning verses of 'Can you feel the love tonight'. He drops you off at the next town. Before you go he asks you if you know any good places to dump bodies. You reply: 'Try the pier.'",
+                choice1: "The", choice1Destination: 0,
+                choice2: "End", choice2Destination: 0
+            )
         ]
         
         func getStoryTitle() -> String {
@@ -32,16 +57,16 @@
             return stories[storyNumber].choice2
         }
         
-        //Mutating function as we're changing the storyNumber property.
         mutating func nextStory(userChoice: String) {
             
-            //All logic is still exactly the same as before, now moved to storyBrain to act as a seperate manager of data.
             let currentStory = stories[storyNumber]
             
+            //Instead of setting the next story manually, we're looking to the Story object to see what the next story should be.
+            //This makes our code a lot more scalable, so we can write much longer stories!
             if userChoice == currentStory.choice1 {
-                storyNumber = 1
+                storyNumber = currentStory.choice1Destination
             } else if userChoice == currentStory.choice2 {
-                storyNumber = 2
+                storyNumber = currentStory.choice2Destination
             }
         }
         
