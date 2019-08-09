@@ -61,8 +61,6 @@
             
             let currentStory = stories[storyNumber]
             
-            //Instead of setting the next story manually, we're looking to the Story object to see what the next story should be.
-            //This makes our code a lot more scalable, so we can write much longer stories!
             if userChoice == currentStory.choice1 {
                 storyNumber = currentStory.choice1Destination
             } else if userChoice == currentStory.choice2 {

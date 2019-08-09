@@ -25,7 +25,6 @@ class ViewController: UIViewController {
 
     @IBAction func choiceMade(_ sender: UIButton) {
         
-        //Calls nextStory in the storyBrain and sends over the title of the button that was chosen by the user.
         storyBrain.nextStory(userChoice: sender.currentTitle!)
         
         updateUI()
@@ -34,7 +33,6 @@ class ViewController: UIViewController {
     
     func updateUI() {
         
-        //Now delegating all the data fetching to the storyBrain.
         storyLabel.text = storyBrain.getStoryTitle()
         choice1Button.setTitle(storyBrain.getChoice1(), for: .normal)
         choice2Button.setTitle(storyBrain.getChoice2(), for: .normal)
